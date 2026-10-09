@@ -24,13 +24,28 @@ Construimos la app por pasos. Cada paso se prueba y se corrige antes de pasar al
 |---|---|---|
 | 1 | Esqueleto: inicio, ruta del día, formulario de registro con validación de DNI, 10 paradas de prueba | **Listo para probar** ([qué probar](docs/paso-01.md)) |
 | 2 | Cámara (foto del cargo) y GPS real en el Módulo 2 | Pendiente |
-| 3 | Mapa con las paradas (OpenStreetMap) y botón "Optimizar ruta" (OSRM), con los km ahorrados | Pendiente |
+| 3 | Mapa con las paradas (OpenStreetMap), botón "Optimizar ruta" (OSRM) con los km ahorrados, y botón "Navegar" que abre Waze o Google Maps | Pendiente |
 | 4 | Guardar en la nube (Firebase): inicio de sesión del notificador y subida de foto y datos | Pendiente |
 | 5 | Geocerca: no deja marcar "Entregada" si el notificador está lejos de la dirección | Pendiente |
 | 6 | Firma en pantalla y constancia en PDF | Pendiente |
 | 7 | Panel del coordinador y reporte de km y combustible para el informe | Pendiente |
 
-## Cómo correr la app (primera vez)
+## Instalar la app en tu celular Android (sin cables)
+
+Cada vez que se sube un avance, GitHub revisa el código, corre las pruebas y crea el instalador de Android (APK) por su cuenta. Tarda unos 10 minutos.
+
+1. En el celular, abre Chrome y entra a:
+   **https://github.com/DennisMuchaRodriguez/AppFiscal-a-/releases/tag/apk-prueba**
+2. En **Assets**, toca **AppFiscal.apk** para descargarlo.
+3. Abre el archivo descargado. Android pedirá permiso para **instalar apps de origen desconocido** desde Chrome: actívalo y vuelve atrás.
+4. Si aparece un aviso de **Play Protect** ("app no reconocida"), toca **Más detalles → Instalar de todas formas**. Sale porque la app no viene de Play Store.
+5. Abre **AppFiscal**. Abajo, en el inicio, dice **"compilación #N"**: ese número te dice qué versión tienes.
+
+Para actualizar, repite los pasos 1 a 3. La nueva versión se instala encima de la anterior.
+
+Si quieres ver si ya terminó de compilar, entra a la pestaña **Actions** del repositorio: un círculo amarillo significa que está trabajando, un check verde que ya está listo y una X roja que falló.
+
+## Cómo correr la app en tu computadora (primera vez)
 
 Esta guía es para **Windows**. Solo se hace una vez.
 

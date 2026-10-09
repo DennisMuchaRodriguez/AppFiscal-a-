@@ -54,12 +54,24 @@ class PantallaInicio extends StatelessWidget {
               textAlign: TextAlign.center,
               style: Theme.of(context).textTheme.bodySmall,
             ),
+            const SizedBox(height: 8),
+            Text(
+              _compilacion.isEmpty
+                  ? 'Versión de desarrollo'
+                  : 'Versión de prueba · compilación #$_compilacion',
+              textAlign: TextAlign.center,
+              style: Theme.of(context).textTheme.labelSmall,
+            ),
           ],
         ),
       ),
     );
   }
 }
+
+/// Número de compilación que pone GitHub al crear el APK
+/// (ver .github/workflows/apk.yml). Sirve para saber si tienes la última versión.
+const _compilacion = String.fromEnvironment('COMPILACION');
 
 /// Tarjeta superior con la fecha y el avance del día.
 class _ResumenDelDia extends StatelessWidget {

@@ -29,11 +29,24 @@ android {
         versionName = flutter.versionName
     }
 
+    signingConfigs {
+        // Llave SOLO para el prototipo. Al firmar todas las versiones con la
+        // misma llave, cada APK nuevo se instala encima del anterior.
+        // Para publicar la app de verdad se debe crear una llave privada.
+        create("prototipo") {
+            storeFile = file("prototipo.keystore")
+            storePassword = "appfiscal"
+            keyAlias = "prototipo"
+            keyPassword = "appfiscal"
+        }
+    }
+
     buildTypes {
+        debug {
+            signingConfig = signingConfigs.getByName("prototipo")
+        }
         release {
-            // TODO: Add your own signing config for the release build.
-            // Signing with the debug keys for now, so `flutter run --release` works.
-            signingConfig = signingConfigs.getByName("debug")
+            signingConfig = signingConfigs.getByName("prototipo")
         }
     }
 }
